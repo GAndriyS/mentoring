@@ -1,0 +1,19 @@
+Таск підвалив)
+Замути 2 ф-ї:
+1) promiseTimeout(timeout: number): Promise<any> - ф-я яка приймає кількість мілісекунд як число і повертає
+проміс який резолвиться через заданий час
+Наприклад: setTimeout(() => { console.log('Done') }, 2000) то саме що і promiseTimeout(2000).then(() => { console.log('Done') })
+
+2) move(steps: MoveElemParam[]): Promise<any>
+interface MoveElemParam {
+  direction: 'left' | 'right' | 'top' | 'bottom';
+  elem: HTMLElement;
+  px: number;
+  delay: number;
+}
+
+в 2 ф-ї треба використати 1 функцію.
+move приймає масив кроків кожен з яких описаний інтерфейсом MoveElemParam.
+ф-я має міняти позицію заданого елементу "elem" в певну сторону "direction" після заданої затримки "delay" на
+задану кількість пікселів "рх"
+ф-я має повертати проміс який виконується коли всі кроки пройдені
